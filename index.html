@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Media Gallery</title>
+    <style>
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .media-container {
+            text-align: center;
+        }
+
+        .media {
+            width: 300px;
+            height: auto;
+            border: 2px solid #ccc;
+            padding: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+        <img class="media" id="image1" src="image1.jpg" alt="Image 1">
+        <button onclick="changeImage('image1')">Change Image 1</button>
+    </div>
+
+   
+        <img class="media" id="image2" src="image2.jpg" alt="Image 2">
+        <button onclick="changeImage('image2')">Change Image 2</button>
+    </div>
+
+        <img class="media" id="image3" src="image3.jpg" alt="Image 3">
+        <button onclick="changeImage('image3')">Change Image 3</button>
+    </div>
+
+    
+        <video class="media" id="video1" controls>
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button onclick="changeVideo('video1')">Change Video 1</button>
+    </div>
+
+   
+        <video class="media" id="video2" controls>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button onclick="changeVideo('video2')">Change Video 2</button>
+    </div>
+
+    
+        <video class="media" id="video3" controls>
+            <source src="video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button onclick="changeVideo('video3')">Change Video 3</button>
+    </div>
+
+    <script>
+        function changeImage(imageId) {
+            const imageElement = document.getElementById(imageId);
+
+            // Example: Change the image source to a new image
+            if (imageId === 'image1') {
+                imageElement.src = 'new_image1.jpg';
+            } else if (imageId === 'image2') {
+                imageElement.src = 'new_image2.jpg';
+            } else if (imageId === 'image3') {
+                imageElement.src = 'new_image3.jpg';
+            }
+        }
+
+        function changeVideo(videoId) {
+            const videoElement = document.getElementById(videoId);
+
+            // Example: Change the video source to a new video
+            if (videoId === 'video1') {
+                videoElement.src = 'new_video1.mp4';
+            } else if (videoId === 'video2') {
+                videoElement.src = 'new_video2.mp4';
+            } else if (videoId === 'video3') {
+                videoElement.src = 'new_video3.mp4';
+            }
+
+            // Reset video playback
+            videoElement.load();
+        }
+    </script>
+</body>
+</html>
